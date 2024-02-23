@@ -58,13 +58,13 @@ ls -lh "$dest"
 
 A maneira mais simples de usar o script de backup acima é copiar e colar o conteúdo em um arquivo (chamado `backup.sh`, por exemplo). O arquivo deve ser tornado executável:
 
-```bash
+```
 chmod u+x backup.sh
 ```
 
 Em seguida, em um prompt do terminal, execute o seguinte comando:
 
-```bash
+```
 sudo ./backup.sh
 ```
 
@@ -77,13 +77,13 @@ Aqui estão alguns comandos úteis para essa finalidade:
 
 **Listando o conteúdo do arquivo de backup:** Para ver uma listagem do conteúdo do arquivo de backup, execute o seguinte comando em um terminal:
 
-```bash
+```
 tar -tzvf /mnt/backup/host-Monday.tgz
 ```
 
 **Restaurando um arquivo do backup:** Para restaurar um arquivo do arquivo de backup para um diretório diferente, utilize o seguinte comando:
 
-```bash
+```
 tar -xzvf /mnt/backup/host-Monday.tgz -C /tmp etc/hosts
 ```
 
@@ -91,7 +91,7 @@ A opção `-C` do `tar` redireciona os arquivos extraídos para o diretório esp
 
 Para restaurar todos os arquivos do arquivo de backup, utilize o seguinte comando:
 
-```bash
+```
 cd /
 sudo tar -xzvf /mnt/backup/host-Monday.tgz
 ```
