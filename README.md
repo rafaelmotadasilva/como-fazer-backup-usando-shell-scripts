@@ -31,6 +31,7 @@ O seguinte shell script usa o comando tar para criar um arquivo compactado em um
 # Define variáveis
 backup_files="/home /var/spool/mail /etc /root /boot /opt"
 dest="/mnt/backup"
+mkdir –p “$dest”
 day=$(date +%A)
 hostname=$(hostname -s)
 archive_file="$hostname-$day.tgz"
@@ -78,13 +79,13 @@ Aqui estão alguns comandos úteis para essa finalidade:
 **Listando o conteúdo do arquivo de backup:** Para ver uma listagem do conteúdo do arquivo de backup, execute o seguinte comando em um terminal:
 
 ```
-tar -tzvf /mnt/backup/host-Monday.tgz
+tar -tzvf /mnt/backup/hostname-day.tgz
 ```
 
 **Restaurando um arquivo do backup:** Para restaurar um arquivo do arquivo de backup para um diretório diferente, utilize o seguinte comando:
 
 ```
-tar -xzvf /mnt/backup/host-Monday.tgz -C /tmp etc/hosts
+tar -xzvf /mnt/backup/hostname-day.tgz -C /tmp etc/hosts
 ```
 
 A opção `-C` do `tar` redireciona os arquivos extraídos para o diretório especificado. O exemplo acima irá extrair o arquivo `/etc/hosts` para `/tmp/etc/hosts`. O `tar` recria a estrutura de diretórios que ele contém.
@@ -93,14 +94,14 @@ Para restaurar todos os arquivos do arquivo de backup, utilize o seguinte comand
 
 ```
 cd /
-sudo tar -xzvf /mnt/backup/host-Monday.tgz
+sudo tar -xzvf /mnt/backup/hostname-day.tgz
 ```
 
 **Nota:** Isso substituirá os arquivos atualmente no sistema de arquivos.
 
 ## Conclusão
 
-Breve conclusão ou considerações finais sobre o projeto.
+Parabéns! Agora você tem um backup automatizado e confiável. Certifique-se de testá-lo regularmente para evitar surpresas.
 
 ## Contribuição
 
